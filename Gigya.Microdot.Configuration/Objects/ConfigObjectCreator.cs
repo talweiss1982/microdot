@@ -214,7 +214,7 @@ namespace Gigya.Microdot.Configuration.Objects
 
                 try
                 {
-                    updatedConfig = LatestNode.ToObject(ObjectType);
+                    updatedConfig = LatestNode.ToObject(ObjectType, JsonSerializer.Create(new JsonSerializerSettings { Converters = new[] {new ConfigJsonConverter()} }));
                 }
                 catch (Exception ex)
                 {

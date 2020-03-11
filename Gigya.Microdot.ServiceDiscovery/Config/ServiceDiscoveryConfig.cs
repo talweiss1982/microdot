@@ -67,6 +67,8 @@ namespace Gigya.Microdot.ServiceDiscovery.Config
         /// </summary>
         public string Source { get; set; }
 
+        public int[] Foo;
+        
         public string Hosts { get; set; }
 
         /// <summary>

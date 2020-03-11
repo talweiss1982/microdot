@@ -58,6 +58,7 @@
     <Compile Include="ConfigDecryptor.cs" />
     <Compile Include="ConfigItem.cs" />
     <Compile Include="ConfigItemsCollection.cs" />
+    <Compile Include="ConfigJsonSerializer.cs" />
     <Compile Include="ConfigurationAssembly.cs" />
     <Compile Include="ConfigurationFilesWatcher.cs" />
     <Compile Include="ConfigurationLocationsParser.cs" />

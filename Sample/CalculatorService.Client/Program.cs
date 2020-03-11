@@ -1,15 +1,29 @@
 ﻿using System;
 using CalculatorService.Interface;
+using Gigya.Microdot.Configuration;
 using Gigya.Microdot.Logging.NLog;
 using Gigya.Microdot.Ninject;
+using Newtonsoft.Json;
 using Ninject;
 
 namespace CalculatorService.Client
 {
+    public class Bar
+    {
+        public Foo MyFoo { get; set; }
+    }
+    public class Foo
+    {
+        public string[] Stuff;
+    }
+    
     class Program
     {
+
         static void Main(string[] args)
         {
+            var barJson = "{\r\n  \"MyFoo\":\r\n  {\r\n    \"Stuff\":\"those,are,my,stuff\"\r\n  }\r\n}";
+            var res = JsonConvert.DeserializeObject<Bar>(barJson, new ConfigJsonConverter());
             try
             {
                 Environment.SetEnvironmentVariable("GIGYA_CONFIG_ROOT", Environment.CurrentDirectory);
